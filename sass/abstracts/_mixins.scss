@@ -2,7 +2,7 @@
 
 // Buttons
 
-@mixin button ($width, $bg-color) {
+@mixin button ($width, $bg-color, $active-color) {
     width: $width;
     height: 58px;
     border-radius: 29px;
@@ -15,4 +15,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover {
+        background-color: $active-color;
+    }
+}
+
+// Divisions
+
+@mixin division {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .vertical-line {
+        border-left: 1px solid v.$light-grey;
+        height: 84px;
+    }
+    .circle-number {
+        width: 56px;
+        height: 56px;
+        border: 1px solid v.$light-grey;
+        border-radius: 29px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: v.$white;
+        p {
+            font-size: 16px;
+            font-weight: 900;
+            color: v.$grey;
+        }
+    }
+}
+
+// Paragraphs
+
+@mixin paragraph {
+        width: 327px;
+        font-size: 16px;
+        line-height: 26px;      
+        color: v.$grey;
 }

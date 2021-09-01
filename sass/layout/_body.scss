@@ -9,4 +9,6 @@
 body {
     font-family: v.$red-hat-display;
     background-color: v.$white;
+    overflow-x: hidden;
+    min-width: 375px;
 }
