@@ -22,8 +22,8 @@ This is a solution to the [Meet landing page challenge on Frontend Mentor](https
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/LuisCBeltran/meet-landing-page)
-- Live Site URL: [Add live site URL here](https://luiscbeltran.github.io/meet-landing-page/)
+- Solution URL: [Github - Meet Landing Page](https://github.com/LuisCBeltran/meet-landing-page)
+- Live Site URL: [Meet Landing Page](https://luiscbeltran.github.io/meet-landing-page/)
 
 ## My process
 
