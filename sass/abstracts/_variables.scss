@@ -16,3 +16,10 @@ $light-green: #8FE3F9;
 $hover-green: #71C0D4;
 $light-violet: #D9B8FF;
 $white: #FAFAFA;
+
+// Breakpoint map
+
+$breakpoints: (
+    tb: 768px,
+    dt: 1440px,
+);

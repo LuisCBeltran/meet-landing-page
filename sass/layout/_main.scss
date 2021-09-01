@@ -4,17 +4,36 @@
 .hero {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1%;
+    grid-template-rows: auto auto auto;
     place-items: center;
+    @include m.media-up(dt) {
+        width: 1534px;
+        height: 358px;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 1fr;
+    }
     .hero__image-container {
-        position: relative;
-        width: 375px;
-        img {
-            width: 414px;
-            height: 153px;
-            position: relative;
-            left: 50%;
-            margin-left: -207px;
+        width: 100%;
+        height: 153px;
+        background-image: url('./assets/tablet/image-hero.png');
+        background-size: 414px 153px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        overflow-x: hidden;
+        @include m.media-up(tb) {
+            margin-top: 10px;
+            height: 303px;
+            background-size: 820px 303px;
+        }
+        @include m.media-up(dt) {
+            width: 482px;
+            height: 303px;
+            background-image: url('./assets/desktop/image-hero-left.png');
+            background-size: 394px 303px;
+            background-position: left top;
+            margin-top: 0;
+            align-self: start;
+            justify-self: start;
         }
     }
     .hero__article {
@@ -22,6 +41,12 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        @include m.media-up(dt) {
+            width: 540px;
+            align-self: end;
+            justify-self: center;
+            padding-bottom: 5px;
+        }
         h1 {
             width: 280px;
             font-size: 40px;
@@ -29,18 +54,43 @@
             font-weight: 900;
             margin-top: 48px;
             color: v.$light-black;
+            @include m.media-up(tb) {
+                width: 339px;
+                font-size: 48px;
+                line-height: 48px;
+                margin-top: 72px;
+            }
+            @include m.media-up(dt) {
+                width: 445px;
+                font-size: 64px;
+                line-height: 64px;
+                margin-top: 0;
+
+            }
         }
         p {
             @include m.paragraph;
             margin-top: 24px;
+            @include m.media-up(tb) {
+                width: 457px;
+            }
+            @include m.media-up(dt) {
+                width: 540px;
+                margin-top: 34px;
+                font-size: 18px;
+                line-height: 26px;
+            }
         }
         .hero-buttons {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin-top: 32px;
+            @include m.media-up(tb) {
+                flex-direction: row;
+            }
             .button-download {
-                margin-top: 32px;
                 @include m.button(193px, v.$dark-green, v.$hover-green);
                 strong {
                     padding-left: 5px;
@@ -50,7 +100,23 @@
             .button-whatisit {
                 margin-top: 16px;
                 @include m.button(139px, v.$violet, v.$hover-violet);
+                @include m.media-up(tb) {
+                    margin-top: 0;
+                    margin-left: 16px;
+                }
             }
+        }
+    }
+    .hero__image-container-right {
+        @include m.media-up(dt) {
+            width: 482px;
+            height: 303px;
+            background-image: url('./assets/desktop/image-hero-right.png');
+            background-size: 394px 303px;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            justify-self: end;
+            align-self: end;
         }
     }
 }
@@ -63,6 +129,12 @@
     .division-1 {
         margin-top: 64px;
         @include m.division;
+        @include m.media-up(tb) {
+            margin-top: 80px;
+        }
+        @include m.media-up(dt) {
+            margin-top: 110px;
+        }
     }
     .characteristics__photos {
         display: grid;
@@ -70,13 +142,39 @@
         grid-template-rows: auto auto;
         gap: 25px;
         margin-top: 64px;
+        @include m.media-up(tb) {
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto;
+            gap: 11px;
+            margin-top: 67px;
+        }
+        @include m.media-up(dt) {
+            gap: 30px;
+            margin-top: 64px;
+        }
         .photo-container {
             width: 151px;
             height: 143px;
+            @include m.media-up(tb) {
+                width: 164px;
+                height: 156px;
+            }
+            @include m.media-up(dt) {
+                width: 255px;
+                height: 242px;
+            }
             img {
                 width: 151px;
                 height: 143px;
                 border-radius: 8px;
+                @include m.media-up(tb) {
+                    width: 164px;
+                    height: 156px;
+                }
+                @include m.media-up(dt) {
+                    width: 255px;
+                    height: 242px;
+                }
             }
         }
     }
@@ -87,6 +185,12 @@
         align-items: center;
         text-align: center;
         margin-top: 64px;
+        @include m.media-up(tb) {
+            margin-top: 48px;
+        }
+        @include m.media-up(dt) {
+            margin-top: 80px;
+        }
         h3 {
             font-size: 16px;
             font-weight: 900;
@@ -102,10 +206,23 @@
             line-height: 36px;
             color: v.$light-black;
             margin-top: 24px;
+            @include m.media-up(tb) {
+                width: 445px;
+                font-size: 40px;
+                line-height: 44px;
+                margin-top: 16px;
+            }
         }
         p {
             @include m.paragraph;
             margin-top: 32px;
+            @include m.media-up(tb) {
+                width: 573px;
+            }
+            @include m.media-up(dt) {
+                width: 540px;
+                font-size: 18px;
+            }
         }
     }
 }

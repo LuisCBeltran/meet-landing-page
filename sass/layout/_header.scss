@@ -1,5 +1,11 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 header {
     height: 130px;
     display: grid;
     place-items: center;
+    @include m.media-up(dt) {
+        height: 169px;
+    }
 }

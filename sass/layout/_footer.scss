@@ -2,12 +2,19 @@
 @use '../abstracts/mixins' as m;
 
 footer {
+    width: 100%;
     margin-top: 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    @include m.media-up(tb) {
+        margin-top: 80px;
+    }
+    @include m.media-up(dt) {
+        margin-top: 72px;
+    }
     .division-container {
         position: relative;
         height: 112px;
@@ -29,6 +36,10 @@ footer {
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
+        @include m.media-up(dt) {
+            flex-direction: row;
+            height: 308px;
+        }
         h2 {
             width: 327px;
             font-size: 32px;
@@ -37,6 +48,16 @@ footer {
             color: v.$white;
             margin-top: 92px;
             z-index: 1;
+            @include m.media-up(tb) {
+                width: 457px;
+                font-size: 40px;
+                line-height: 44px;
+            }
+            @include m.media-up(dt) {
+                width: 350px;
+                margin-top: 0;
+                text-align: start;
+            }
         }
         p {
             width: 327px;
@@ -45,12 +66,29 @@ footer {
             color: v.$white;
             margin-top: 24px;
             z-index: 1;
+            @include m.media-up(tb) {
+                width: 573px;
+                margin-top: 32px;
+            }
+            @include m.media-up(dt) {
+                width: 350px;
+                margin-top: 0;
+                margin-left: 125px;
+                text-align: start;
+            }
         }
         .footer-button {
             margin-top: 32px;
             margin-bottom: 72px;
             @include m.button(193px, v.$violet, v.$hover-violet);
             z-index: 1;
+            @include m.media-up(tb) {
+                margin-top: 40px;
+                margin-bottom: 66px;
+            }
+            @include m.media-up(dt) {
+                margin: 0 0 0 92px;
+            }
             strong {
                 padding-left: 5px;
                 color: v.$light-violet;
