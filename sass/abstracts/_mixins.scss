@@ -1,0 +1,18 @@
+@use 'variables' as v;
+
+// Buttons
+
+@mixin button ($width, $bg-color) {
+    width: $width;
+    height: 58px;
+    border-radius: 29px;
+    background-color: $bg-color;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 26px;
+    color: v.$white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

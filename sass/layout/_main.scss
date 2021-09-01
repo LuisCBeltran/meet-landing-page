@@ -1,0 +1,60 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1%;
+    place-items: center;
+    .hero__image-container {
+        position: relative;
+        width: 375px;
+        img {
+            width: 414px;
+            height: 153px;
+            position: relative;
+            left: 50%;
+            margin-left: -207px;
+        }
+    }
+    .hero__article {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            width: 280px;
+            font-size: 40px;
+            line-height: 44px;
+            font-weight: 900;
+            text-align: center;
+            margin-top: 48px;
+            color: v.$light-black;
+        }
+        p {
+            width: 327px;
+            font-size: 16px;
+            line-height: 26px;
+            text-align: center;
+            color: v.$grey;
+            margin-top: 24px;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .button-download {
+                margin-top: 32px;
+                @include m.button(193px, v.$dark-green);
+                strong {
+                    padding-left: 5px;
+                    color: v.$light-green;
+                }
+            }
+            .button-whatisit {
+                margin-top: 16px;
+                @include m.button(139px, v.$violet);
+            }
+        }
+    }
+}
